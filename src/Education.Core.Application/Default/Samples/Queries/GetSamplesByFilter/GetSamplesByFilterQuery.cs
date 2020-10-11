@@ -1,0 +1,16 @@
+using Education.Core.Domain.Entities.Default;
+
+namespace Education.Core.Application.Default.Samples.Queries.GetSamplesByFilter
+{
+    public class GetSamplesByFilterQuery : ApplicationRequest<Sample, GetSamplesByFilterQueryResponse>
+    {
+        public GetSamplesByFilterQuery()
+        {
+            ConfigKeys(x => x.SampleID);
+            
+            // Configures supressed properties & response properties
+            //ConfigSuppressedProperties(x => x);
+            //ConfigSuppressedResponseProperties(x => x);  
+        }
+    }
+}

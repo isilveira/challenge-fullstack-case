@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Education.Core.Domain.Entities\Education.Core.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Education.Core.Domain.Validations\Education.Core.Domain.Validations.csproj" />
+    <ProjectReference Include="..\Education.Core.Domain\Education.Core.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
