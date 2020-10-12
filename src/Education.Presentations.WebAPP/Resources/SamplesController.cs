@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Education.Presentations.Web.API.StockWallet.Resources
+namespace Education.Presentations.Resources
 {
     public class SamplesController : ResourceController
     {

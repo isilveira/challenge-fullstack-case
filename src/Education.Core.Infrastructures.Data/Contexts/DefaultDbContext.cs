@@ -7,6 +7,9 @@ namespace Education.Core.Infrastructures.Data.Contexts
     public class DefaultDbContext : DbContext, IDefaultDbContext
     {
         public DbSet<Sample> Samples { get; set; }
+        public DbSet<School> Schools { get; set; }
+        public DbSet<Class> Classes { get; set; }
+        public DbSet<Student> Students { get; set; }
 
         protected DefaultDbContext()
         {
