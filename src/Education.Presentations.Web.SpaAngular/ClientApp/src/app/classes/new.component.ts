@@ -12,6 +12,9 @@ export class NewClassComponent {
   public schoolsResponse: Response<School>;
   public id: string;
   public form;
+  public message: string;
+  public messageClass: string;
+  public messageTitle: string;
   private httpClient: HttpClient;
   private router: Router;
   private endPoint: string;
@@ -43,11 +46,19 @@ export class NewClassComponent {
     this.httpClient.post<Response<Class>>(this.endPoint, model).subscribe(result => {
       if (result.statusCode === 200) {
         console.log(result.message);
+        this.messageClass = 'success';
+        this.messageTitle = 'Sucesso!';
+        this.message = result.message;
+        this.form.reset();
+        setTimeout(() => {
+          this.router.navigate(['classes']);
+        }, 2500)
+      } else {
+        this.messageClass = 'danger';
+        this.messageTitle = 'Erro!';
+        this.message = result.message;
       }
     });
-
-    this.form.reset();
-    this.router.navigate(['classes']);
   }
 }
 

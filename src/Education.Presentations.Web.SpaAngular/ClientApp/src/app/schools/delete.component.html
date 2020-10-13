@@ -4,10 +4,17 @@
 
 <hr />
 
+<div *ngIf="message" class="alert alert-{{messageClass}} alert-dismissible fade show" role="alert">
+  <strong>{{messageTitle}}</strong> {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
 <form [formGroup]="schoolForm" (ngSubmit)="onSubmit(schoolForm.value)">
   <div class="form-group">
     <label for="name">Nome</label>
-    <input id="name" type="text" formControlName="name" class="form-control" disabled="disabled"/>
+    <input id="name" type="text" formControlName="name" class="form-control" disabled="disabled" />
   </div>
   <div class="row">
     <div class="col text-left">

@@ -12,6 +12,9 @@ export class DeleteClassComponent {
   public schoolsResponse: Response<School>;
   public id: string;
   public form;
+  public message: string;
+  public messageClass: string;
+  public messageTitle: string;
   private httpClient: HttpClient;
   private router: Router;
   private endPoint: string;
@@ -48,11 +51,18 @@ export class DeleteClassComponent {
     this.httpClient.delete<Response<Class>>(this.endPoint + `/${model.classID}`).subscribe(result => {
       if (result.statusCode === 200) {
         console.log(result.message);
+        this.messageClass = 'success';
+        this.messageTitle = 'Sucesso!';
+        this.message = result.message;
+        setTimeout(() => {
+          this.router.navigate(['classes']);
+        }, 2500)
+      } else {
+        this.messageClass = 'danger';
+        this.messageTitle = 'Erro!';
+        this.message = result.message;
       }
     });
-
-    this.form.reset();
-    this.router.navigate(['classes']);
   }
 }
 
