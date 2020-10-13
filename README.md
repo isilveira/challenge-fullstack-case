@@ -3,4 +3,4 @@ Architecture CQRS FullLIB + DDD + MediatR + ModelWrapper + FluentValidation + Sp
 
 BackEnd: C# + WebAPI + .NET Core + EntityFrameworkCore + MSSQL
 
-FrontEnd: Angular
+FrontEnd: Angular + Bootstrap
