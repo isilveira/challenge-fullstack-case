@@ -1,0 +1,20 @@
+<h1 id="tableLabel">Escola</h1>
+
+<p>Insira os dados da nova escola.</p>
+
+<hr />
+
+<form [formGroup]="schoolForm" (ngSubmit)="onSubmit(schoolForm.value)">
+  <div class="form-group">
+    <label for="name">Nome</label>
+    <input id="name" type="text" formControlName="name" class="form-control" />
+  </div>
+  <div class="row">
+    <div class="col text-left">
+      <a class="btn btn-link" [routerLink]="['/schools']">Voltar</a>
+    </div>
+    <div class="col text-right">
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+  </div>
+</form>

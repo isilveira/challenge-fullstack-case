@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-8">
+    <h1 id="tableLabel">Escolas</h1>
+
+    <p>Lista das escolas cadastradas no sistema.</p>
+  </div>
+  <div class="col-md-4 text-right">
+    <a class="btn btn-primary" [routerLink]="['/schools/new']">Nova escola</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p *ngIf="!response"><em>Carregando...</em></p>
+
+    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="response">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th style="width: 50px;"></th>
+          <th style="width: 50px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let school of response.data">
+          <td>{{ school.name }}</td>
+          <td><a class="btn btn-link" [routerLink]="['/schools/edit/'+school.schoolID]">Editar</a></td>
+          <td><a class="btn btn-link text-danger" [routerLink]="['/schools/delete/'+school.schoolID]">Excluir</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

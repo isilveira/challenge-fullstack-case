@@ -1,0 +1,18 @@
+<h1 id="tableLabel">Turmas</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!response"><em>Carregando...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="response">
+  <thead>
+    <tr>
+      <th>Nome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let class of response.data">
+      <td>{{ class.name }}</td>
+    </tr>
+  </tbody>
+</table>
