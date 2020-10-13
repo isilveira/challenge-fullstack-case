@@ -1,18 +1,35 @@
-<h1 id="tableLabel">Turmas</h1>
+<div class="row">
+  <div class="col-md-8">
+    <h1 id="tableLabel">Turmas</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+    <p>Lista das turmas cadastradas no sistema.</p>
+  </div>
+  <div class="col-md-4 text-right">
+    <a class="btn btn-primary" [routerLink]="['/classes/new']">Nova turma</a>
+  </div>
+</div>
 
-<p *ngIf="!response"><em>Carregando...</em></p>
+<div class="row">
+  <div class="col">
+    <p *ngIf="!response"><em>Carregando...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="response">
-  <thead>
-    <tr>
-      <th>Nome</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let class of response.data">
-      <td>{{ class.name }}</td>
-    </tr>
-  </tbody>
-</table>
+    <table class='table table-sm table-striped' aria-labelledby="tableLabel" *ngIf="response">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Código da Turma</th>
+          <th style="width: 50px;"></th>
+          <th style="width: 50px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let class of response.data">
+          <td>{{ class.name }}</td>
+          <td>{{ class.classCode }}</td>
+          <td><a [routerLink]="['/classes/edit/'+class.classID]">Editar</a></td>
+          <td><a class="text-danger" [routerLink]="['/classes/delete/'+class.classID]">Excluir</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

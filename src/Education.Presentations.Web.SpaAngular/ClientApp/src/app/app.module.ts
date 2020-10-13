@@ -14,6 +14,9 @@ import { NewSchoolComponent } from './schools/new.component';
 import { EditSchoolComponent } from './schools/edit.component';
 import { DeleteSchoolComponent } from './schools/delete.component';
 import { ClassesComponent } from './classes/classes.component';
+import { NewClassComponent } from './classes/new.component';
+import { EditClassComponent } from './classes/edit.component';
+import { DeleteClassComponent } from './classes/delete.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ClassesComponent } from './classes/classes.component';
     NewSchoolComponent,
     EditSchoolComponent,
     DeleteSchoolComponent,
-    ClassesComponent
+    ClassesComponent,
+    NewClassComponent,
+    EditClassComponent,
+    DeleteClassComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -42,6 +48,9 @@ import { ClassesComponent } from './classes/classes.component';
       { path: 'schools/edit/:id', component: EditSchoolComponent },
       { path: 'schools/delete/:id', component: DeleteSchoolComponent },
       { path: 'classes', component: ClassesComponent },
+      { path: 'classes/new', component: NewClassComponent },
+      { path: 'classes/edit/:id', component: EditClassComponent },
+      { path: 'classes/delete/:id', component: DeleteClassComponent },
     ])
   ],
   providers: [],

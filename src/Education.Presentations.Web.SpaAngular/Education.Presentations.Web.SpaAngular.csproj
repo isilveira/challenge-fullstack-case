@@ -29,6 +29,9 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\classes\classes.component.ts" />
+    <None Remove="ClientApp\src\app\classes\delete.component.ts" />
+    <None Remove="ClientApp\src\app\classes\edit.component.ts" />
+    <None Remove="ClientApp\src\app\classes\new.component.ts" />
     <None Remove="ClientApp\src\app\schools\delete.component.ts" />
     <None Remove="ClientApp\src\app\schools\edit.component.ts" />
     <None Remove="ClientApp\src\app\schools\new.component.ts" />
@@ -42,6 +45,15 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\classes\classes.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\classes\delete.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\classes\edit.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\classes\new.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\schools\delete.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\schools\edit.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\schools\new.component.ts" />
