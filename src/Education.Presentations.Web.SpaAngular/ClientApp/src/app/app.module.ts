@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SchoolsComponent } from './schools/schools.component';
 import { NewSchoolComponent } from './schools/new.component';
 import { EditSchoolComponent } from './schools/edit.component';
@@ -23,8 +21,6 @@ import { DeleteClassComponent } from './classes/delete.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     SchoolsComponent,
     NewSchoolComponent,
     EditSchoolComponent,
@@ -41,8 +37,6 @@ import { DeleteClassComponent } from './classes/delete.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'schools', component: SchoolsComponent },
       { path: 'schools/new', component: NewSchoolComponent },
       { path: 'schools/edit/:id', component: EditSchoolComponent },
