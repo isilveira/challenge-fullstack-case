@@ -36,23 +36,19 @@ export class NewSchoolComponent {
   }
 
   onSubmit(schoolModel) {
-    console.log(schoolModel);
-
     this.httpClient.post<Response<School>>(this.endPoint, schoolModel).subscribe(result => {
-      if (result.statusCode === 200) {
-        console.log(result.message);
-        this.messageClass = 'success';
-        this.messageTitle = 'Sucesso!';
-        this.message = result.message;
-        this.schoolForm.reset();
-        setTimeout(() => {
-          this.router.navigate(['schools']);
-        }, 2500)
-      } else {
-        this.messageClass = 'danger';
-        this.messageTitle = 'Erro!';
-        this.message = result.message;
-      }
+      console.log(result.message);
+      this.messageClass = 'success';
+      this.messageTitle = 'Sucesso!';
+      this.message = result.message;
+      this.schoolForm.reset();
+      setTimeout(() => {
+        this.router.navigate(['schools']);
+      }, 2500);
+    }, error => {
+      this.messageClass = 'danger';
+      this.messageTitle = 'Erro!';
+      this.message = error.error.message;
     });
   }
 }

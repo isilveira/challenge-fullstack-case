@@ -49,19 +49,17 @@ export class EditClassComponent {
 
   onSubmit(model) {
     this.httpClient.put<Response<Class>>(this.endPoint + `/${model.classID}`, model).subscribe(result => {
-      if (result.statusCode === 200) {
-        console.log(result.message);
-        this.messageClass = 'success';
-        this.messageTitle = 'Sucesso!';
-        this.message = result.message;
-        setTimeout(() => {
-          this.router.navigate(['classes']);
-        }, 2500)
-      } else {
-        this.messageClass = 'danger';
-        this.messageTitle = 'Erro!';
-        this.message = result.message;
-      }
+      console.log(result.message);
+      this.messageClass = 'success';
+      this.messageTitle = 'Sucesso!';
+      this.message = result.message;
+      setTimeout(() => {
+        this.router.navigate(['classes']);
+      }, 2500);
+    }, error => {
+      this.messageClass = 'danger';
+      this.messageTitle = 'Erro!';
+      this.message = error.error.message;
     });
   }
 }

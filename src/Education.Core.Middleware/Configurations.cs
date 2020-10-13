@@ -13,7 +13,9 @@ using Education.Core.Domain.Validations.DomainValidations.Default.Schools;
 using Education.Core.Domain.Validations.DomainValidations.Default.Students;
 using Education.Core.Domain.Validations.EntityValidations.Default;
 using Education.Core.Domain.Validations.EntityValidationsDefault;
+using Education.Core.Domain.Validations.Specifications.Default.Classes;
 using Education.Core.Domain.Validations.Specifications.Default.Samples;
+using Education.Core.Domain.Validations.Specifications.Default.Schools;
 using Education.Core.Infrastructures.Data.Contexts;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -44,8 +46,11 @@ namespace Education.Core.Middleware
             services.AddTransient<SampleDescriptionAlreadyExistsSpecification>();
 
             services.AddTransient<SchoolValidator>();
+            services.AddTransient<SchoolNameAlreadyExistsSpecification>();
 
             services.AddTransient<ClassValidator>();
+            services.AddTransient<ClassNameAlreadyExistsSpecification>();
+            services.AddTransient<ClassCodeAlreadyExistsSpecification>();
 
             services.AddTransient<StudentValidator>();
 
