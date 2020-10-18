@@ -2,20 +2,19 @@ import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-classes',
-  templateUrl: './classes.component.html'
+  selector: 'app-schools-list',
+  templateUrl: './schoolslist.component.html'
 })
-export class ClassesComponent {
-  public response: Response<Class>;
-
+export class SchoolsListComponent {
+  public response: Response<School>;
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Response<Class>>(baseUrl + 'api/classes').subscribe(result => {
+    http.get<Response<School>>(baseUrl + 'api/schools').subscribe(result => {
       this.response = result;
     }, error => console.error(error));
   }
 }
 
-interface Class {
+interface School {
   schoolID: number;
   name: string;
 }

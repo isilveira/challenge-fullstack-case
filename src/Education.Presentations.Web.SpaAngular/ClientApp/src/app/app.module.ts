@@ -7,28 +7,28 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { SchoolsComponent } from './schools/schools.component';
-import { NewSchoolComponent } from './schools/new.component';
-import { EditSchoolComponent } from './schools/edit.component';
-import { DeleteSchoolComponent } from './schools/delete.component';
-import { ClassesComponent } from './classes/classes.component';
-import { NewClassComponent } from './classes/new.component';
-import { EditClassComponent } from './classes/edit.component';
-import { DeleteClassComponent } from './classes/delete.component';
+import { SchoolsListComponent } from './schools/schoolslist.component';
+import { SchoolNewComponent } from './schools/schoolnew.component';
+import { SchoolEditComponent } from './schools/schooledit.component';
+import { SchoolDeleteComponent } from './schools/schooldelete.component';
+import { ClassesListComponent } from './classes/classeslist.component';
+import { ClassNewComponent } from './classes/classnew.component';
+import { ClassEditComponent } from './classes/classedit.component';
+import { ClassDeleteComponent } from './classes/classdelete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    SchoolsComponent,
-    NewSchoolComponent,
-    EditSchoolComponent,
-    DeleteSchoolComponent,
-    ClassesComponent,
-    NewClassComponent,
-    EditClassComponent,
-    DeleteClassComponent,
+    SchoolsListComponent,
+    SchoolNewComponent,
+    SchoolEditComponent,
+    SchoolDeleteComponent,
+    ClassesListComponent,
+    ClassNewComponent,
+    ClassEditComponent,
+    ClassDeleteComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,14 +37,14 @@ import { DeleteClassComponent } from './classes/delete.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'schools', component: SchoolsComponent },
-      { path: 'schools/new', component: NewSchoolComponent },
-      { path: 'schools/edit/:id', component: EditSchoolComponent },
-      { path: 'schools/delete/:id', component: DeleteSchoolComponent },
-      { path: 'classes', component: ClassesComponent },
-      { path: 'classes/new', component: NewClassComponent },
-      { path: 'classes/edit/:id', component: EditClassComponent },
-      { path: 'classes/delete/:id', component: DeleteClassComponent },
+      { path: 'schools', component: SchoolsListComponent },
+      { path: 'schools/new', component: SchoolNewComponent },
+      { path: 'schools/edit/:id', component: SchoolEditComponent },
+      { path: 'schools/delete/:id', component: SchoolDeleteComponent },
+      { path: 'classes', component: ClassesListComponent },
+      { path: 'classes/new', component: ClassNewComponent },
+      { path: 'classes/edit/:id', component: ClassEditComponent },
+      { path: 'classes/delete/:id', component: ClassDeleteComponent },
     ])
   ],
   providers: [],

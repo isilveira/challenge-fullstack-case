@@ -29,14 +29,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\classes\classes.component.ts" />
-    <None Remove="ClientApp\src\app\classes\delete.component.ts" />
-    <None Remove="ClientApp\src\app\classes\edit.component.ts" />
-    <None Remove="ClientApp\src\app\classes\new.component.ts" />
-    <None Remove="ClientApp\src\app\schools\delete.component.ts" />
-    <None Remove="ClientApp\src\app\schools\edit.component.ts" />
-    <None Remove="ClientApp\src\app\schools\new.component.ts" />
-    <None Remove="ClientApp\src\app\schools\schools.component.ts" />
+    <None Remove="ClientApp\src\app\classes\classdelete.component.ts" />
+    <None Remove="ClientApp\src\app\classes\classedit.component.ts" />
+    <None Remove="ClientApp\src\app\classes\classeslist.component.ts" />
+    <None Remove="ClientApp\src\app\classes\classnew.component.ts" />
+    <None Remove="ClientApp\src\app\schools\schooldelete.component.ts" />
+    <None Remove="ClientApp\src\app\schools\schooledit.component.ts" />
+    <None Remove="ClientApp\src\app\schools\schoolnew.component.ts" />
+    <None Remove="ClientApp\src\app\schools\schoolslist.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,20 +45,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\classes\classes.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\classes\delete.component.ts">
+    <TypeScriptCompile Include="ClientApp\src\app\classes\classeslist.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\classes\classdelete.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\classes\edit.component.ts">
+    <TypeScriptCompile Include="ClientApp\src\app\classes\classedit.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\classes\new.component.ts">
+    <TypeScriptCompile Include="ClientApp\src\app\classes\classnew.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\schools\delete.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\schools\edit.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\schools\new.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\schools\schools.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\schools\schooldelete.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\schools\schooledit.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\schools\schoolnew.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\schools\schoolslist.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

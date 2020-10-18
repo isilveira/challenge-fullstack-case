@@ -4,14 +4,14 @@ import { FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-school-edit',
-  templateUrl: './edit.component.html'
+  selector: 'app-class-delete',
+  templateUrl: './classdelete.component.html'
 })
-export class EditSchoolComponent {
-  public response: Response<School>;
-  public model: School;
+export class ClassDeleteComponent {
+  public response: Response<Class>;
+  public schoolsResponse: Response<School>;
   public id: string;
-  public schoolForm;
+  public form;
   public message: string;
   public messageClass: string;
   public messageTitle: string;
@@ -26,28 +26,35 @@ export class EditSchoolComponent {
     _http: HttpClient,
     @Inject('BASE_URL') _baseUrl: string
   ) {
-    this.endPoint = _baseUrl + 'api/schools';
+    this.endPoint = _baseUrl + 'api/classes';
     this.router = _router;
     this.httpClient = _http;
-    this.schoolForm = this._formBuilder.group({
-      schoolID: 0,
+
+    this.httpClient.get<Response<School>>(_baseUrl + 'api/schools').subscribe(result => {
+      this.schoolsResponse = result;
+    }, error => console.error(error));
+
+    this.form = this._formBuilder.group({
+      classID: 0,
       name: '',
+      classCode: '',
+      schoolID: 0,
     });
     this.id = this._route.snapshot.paramMap.get('id');
-    this.httpClient.get<Response<School>>(this.endPoint + `/${this.id}`).subscribe(result => {
+    this.httpClient.get<Response<Class>>(this.endPoint + `/${this.id}`).subscribe(result => {
       this.response = result;
-      this.schoolForm.setValue(this.response.data);
+      this.form.setValue(this.response.data);
     }, error => console.error(error));
   }
 
-  onSubmit(schoolModel) {
-    this.httpClient.put<Response<School>>(this.endPoint + `/${schoolModel.schoolID}`, schoolModel).subscribe(result => {
+  onSubmit(model) {
+    this.httpClient.delete<Response<Class>>(this.endPoint + `/${model.classID}`).subscribe(result => {
       console.log(result.message);
       this.messageClass = 'success';
       this.messageTitle = 'Sucesso!';
       this.message = result.message;
       setTimeout(() => {
-        this.router.navigate(['schools']);
+        this.router.navigate(['classes']);
       }, 2500);
     }, error => {
       this.messageClass = 'danger';
@@ -55,6 +62,13 @@ export class EditSchoolComponent {
       this.message = error.error.message;
     });
   }
+}
+
+interface Class {
+  classID: number;
+  name: string;
+  classCode: string;
+  schoolID: number;
 }
 
 interface School {

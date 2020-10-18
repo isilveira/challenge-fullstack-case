@@ -4,10 +4,10 @@ import { FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-class-delete',
-  templateUrl: './delete.component.html'
+  selector: 'app-class-edit',
+  templateUrl: './classedit.component.html'
 })
-export class DeleteClassComponent {
+export class ClassEditComponent {
   public response: Response<Class>;
   public schoolsResponse: Response<School>;
   public id: string;
@@ -48,7 +48,7 @@ export class DeleteClassComponent {
   }
 
   onSubmit(model) {
-    this.httpClient.delete<Response<Class>>(this.endPoint + `/${model.classID}`).subscribe(result => {
+    this.httpClient.put<Response<Class>>(this.endPoint + `/${model.classID}`, model).subscribe(result => {
       console.log(result.message);
       this.messageClass = 'success';
       this.messageTitle = 'Sucesso!';

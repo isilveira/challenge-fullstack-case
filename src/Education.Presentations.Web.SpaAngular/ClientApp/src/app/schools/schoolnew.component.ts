@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-school-new',
-  templateUrl: './new.component.html'
+  templateUrl: './schoolnew.component.html'
 })
-export class NewSchoolComponent {
+export class SchoolNewComponent {
   public response: Response<School>;
   public model: School;
   public id: string;
