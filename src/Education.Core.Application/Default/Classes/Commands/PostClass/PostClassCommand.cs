@@ -10,9 +10,7 @@ namespace Education.Core.Application.Default.Classes.Commands.PostClass
 
             // Configures supressed properties & response properties
             ConfigSuppressedProperties(x => x.School);
-            ConfigSuppressedProperties(x => x.Students);
             ConfigSuppressedResponseProperties(x => x.School);
-            ConfigSuppressedResponseProperties(x => x.Students);
         }
     }
 }

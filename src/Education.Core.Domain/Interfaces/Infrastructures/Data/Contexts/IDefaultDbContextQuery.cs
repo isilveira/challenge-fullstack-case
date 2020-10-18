@@ -5,9 +5,7 @@ namespace Education.Core.Domain.Interfaces.Infrastructures.Data.Contexts
 {
     public interface IDefaultDbContextQuery
     {
-        public DbSet<Sample> Samples { get; set; }
         public DbSet<School> Schools { get; set; }
         public DbSet<Class> Classes { get; set; }
-        public DbSet<Student> Students { get; set; }
     }
 }

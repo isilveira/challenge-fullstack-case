@@ -1,20 +1,12 @@
 ﻿using Education.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using Education.Core.Domain.Interfaces.Services.Default.Classes;
-using Education.Core.Domain.Interfaces.Services.Default.Samples;
 using Education.Core.Domain.Interfaces.Services.Default.Schools;
-using Education.Core.Domain.Interfaces.Services.Default.Students;
 using Education.Core.Domain.Services.Default.Classes;
-using Education.Core.Domain.Services.Default.Samples;
 using Education.Core.Domain.Services.Default.Schools;
-using Education.Core.Domain.Services.Default.Students;
 using Education.Core.Domain.Validations.DomainValidations.Default.Classes;
-using Education.Core.Domain.Validations.DomainValidations.Default.Samples;
 using Education.Core.Domain.Validations.DomainValidations.Default.Schools;
-using Education.Core.Domain.Validations.DomainValidations.Default.Students;
-using Education.Core.Domain.Validations.EntityValidations.Default;
 using Education.Core.Domain.Validations.EntityValidationsDefault;
 using Education.Core.Domain.Validations.Specifications.Default.Classes;
-using Education.Core.Domain.Validations.Specifications.Default.Samples;
 using Education.Core.Domain.Validations.Specifications.Default.Schools;
 using Education.Core.Infrastructures.Data.Contexts;
 using MediatR;
@@ -42,22 +34,12 @@ namespace Education.Core.Middleware
                     configuration.GetConnectionString("DefaultConnection"),
                     sql => sql.MigrationsAssembly(presentationAssembly.GetName().Name)));
 
-            services.AddTransient<SampleValidator>();
-            services.AddTransient<SampleDescriptionAlreadyExistsSpecification>();
-
             services.AddTransient<SchoolValidator>();
             services.AddTransient<SchoolNameAlreadyExistsSpecification>();
 
             services.AddTransient<ClassValidator>();
             services.AddTransient<ClassNameAlreadyExistsSpecification>();
             services.AddTransient<ClassCodeAlreadyExistsSpecification>();
-
-            services.AddTransient<StudentValidator>();
-
-            services.AddTransient<PutSampleSpecificationsValidator>();
-            services.AddTransient<PostSampleSpecificationsValidator>();
-            services.AddTransient<PatchSampleSpecificationsValidator>();
-            services.AddTransient<DeleteSampleSpecificationsValidator>();
 
             services.AddTransient<PutSchoolSpecificationsValidator>();
             services.AddTransient<PostSchoolSpecificationsValidator>();
@@ -69,16 +51,6 @@ namespace Education.Core.Middleware
             services.AddTransient<PatchClassSpecificationsValidator>();
             services.AddTransient<DeleteClassSpecificationsValidator>();
 
-            services.AddTransient<PutStudentSpecificationsValidator>();
-            services.AddTransient<PostStudentSpecificationsValidator>();
-            services.AddTransient<PatchStudentSpecificationsValidator>();
-            services.AddTransient<DeleteStudentSpecificationsValidator>();
-
-            services.AddTransient<IPutSampleService, PutSampleService>();
-            services.AddTransient<IPostSampleService, PostSampleService>();
-            services.AddTransient<IPatchSampleService, PatchSampleService>();
-            services.AddTransient<IDeleteSampleService, DeleteSampleService>();
-
             services.AddTransient<IPutSchoolService, PutSchoolService>();
             services.AddTransient<IPostSchoolService, PostSchoolService>();
             services.AddTransient<IPatchSchoolService, PatchSchoolService>();
@@ -88,11 +60,6 @@ namespace Education.Core.Middleware
             services.AddTransient<IPostClassService, PostClassService>();
             services.AddTransient<IPatchClassService, PatchClassService>();
             services.AddTransient<IDeleteClassService, DeleteClassService>();
-
-            services.AddTransient<IPutStudentService, PutStudentService>();
-            services.AddTransient<IPostStudentService, PostStudentService>();
-            services.AddTransient<IPatchStudentService, PatchStudentService>();
-            services.AddTransient<IDeleteStudentService, DeleteStudentService>();
 
             var assembly = AppDomain.CurrentDomain.Load("Education.Core.Application");
 

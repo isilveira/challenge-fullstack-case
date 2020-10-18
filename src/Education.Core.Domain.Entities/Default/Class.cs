@@ -12,7 +12,6 @@ namespace Education.Core.Domain.Entities.Default
         public string ClassCode { get; set; }
         public int SchoolID { get; set; }
         public School School { get; set; }
-        public ICollection<Student> Students { get; set; }
 
         public Class()
         {
