@@ -24,15 +24,16 @@ namespace Education.Core.Middleware
     {
         public static IServiceCollection AddMiddleware(this IServiceCollection services, IConfiguration configuration, Assembly presentationAssembly)
         {
+            var defaultConnectionAssembly = typeof(DefaultDbContext).GetTypeInfo().Assembly;
             services.AddDbContext<IDefaultDbContext, DefaultDbContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection"),
-                    sql => sql.MigrationsAssembly(presentationAssembly.GetName().Name)));
+                    sql => sql.MigrationsAssembly(defaultConnectionAssembly.GetName().Name)));
             
             services.AddDbContext<IDefaultDbContextQuery, DefaultDbContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection"),
-                    sql => sql.MigrationsAssembly(presentationAssembly.GetName().Name)));
+                    sql => sql.MigrationsAssembly(defaultConnectionAssembly.GetName().Name)));
 
             services.AddTransient<SchoolValidator>();
             services.AddTransient<SchoolNameAlreadyExistsSpecification>();
