@@ -6,6 +6,8 @@
 
 <div *ngIf="message" class="alert alert-{{messageClass}} alert-dismissible fade show" role="alert">
   <strong>{{messageTitle}}</strong> {{message}}
+  <hr *ngIf="validations && validations.domainExceptions"/>
+  <p *ngFor="let exception of validations.domainExceptions">{{exception}}</p>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -15,6 +17,9 @@
   <div class="form-group">
     <label for="name">Nome</label>
     <input id="name" type="text" formControlName="name" class="form-control" />
+    <ul *ngIf="validations && validations.entityExceptions && validations.entityExceptions.Name">
+      <li *ngFor="let nameValidations of validations.entityExceptions.Name" class="text-danger">{{nameValidations}}</li>
+    </ul>
   </div>
   <div class="row">
     <div class="col text-left">

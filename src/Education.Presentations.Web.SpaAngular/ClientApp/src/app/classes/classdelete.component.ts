@@ -18,6 +18,7 @@ export class ClassDeleteComponent {
   private httpClient: HttpClient;
   private router: Router;
   private endPoint: string;
+  private validations;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -45,6 +46,7 @@ export class ClassDeleteComponent {
       this.response = result;
       this.form.setValue(this.response.data);
     }, error => console.error(error));
+    this.validations = {};
   }
 
   onSubmit(model) {
@@ -60,6 +62,9 @@ export class ClassDeleteComponent {
       this.messageClass = 'danger';
       this.messageTitle = 'Erro!';
       this.message = error.error.message;
+      if (error.error.data) {
+        this.validations = error.error.data;
+      }
     });
   }
 }

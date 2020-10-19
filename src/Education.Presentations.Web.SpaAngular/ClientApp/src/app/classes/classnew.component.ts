@@ -18,6 +18,7 @@ export class ClassNewComponent {
   private httpClient: HttpClient;
   private router: Router;
   private endPoint: string;
+  private validations;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -40,6 +41,7 @@ export class ClassNewComponent {
       classCode:'',
       schoolID: 0,
     });
+    this.validations = {};
   }
 
   onSubmit(model) {
@@ -56,6 +58,9 @@ export class ClassNewComponent {
       this.messageClass = 'danger';
       this.messageTitle = 'Erro!';
       this.message = error.error.message;
+      if (error.error.data) {
+        this.validations = error.error.data;
+      }
     });
   }
 }

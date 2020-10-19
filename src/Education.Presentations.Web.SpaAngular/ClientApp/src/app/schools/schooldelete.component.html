@@ -6,6 +6,8 @@
 
 <div *ngIf="message" class="alert alert-{{messageClass}} alert-dismissible fade show" role="alert">
   <strong>{{messageTitle}}</strong> {{message}}
+  <hr *ngIf="validations && validations.domainExceptions" />
+  <p *ngFor="let exception of validations.domainExceptions">{{exception}}</p>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
