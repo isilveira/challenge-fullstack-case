@@ -1,5 +1,9 @@
 # FullStack Challenge
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
+Architecture CQRS FullLIB + DDD + MediatR + ModelWrapper + FluentValidation + Specification Pattern
+
+BackEnd: C# + WebAPI + .NET Core + EntityFrameworkCore + MSSQL
+
+FrontEnd: Angular + Bootstrap
 
 ### Requisitos
 Esse projeto requer [.NET Core SDK 3.1.403] e [Node.js v12.19.0]
