@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentations", "Presentati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Education.Presentations.Web.SpaAngular", "src\Education.Presentations.Web.SpaAngular\Education.Presentations.Web.SpaAngular.csproj", "{D3C16464-61B8-44B7-A01D-4CC0F4EA6352}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Education.Core.Domain.Services.Tests", "src\Education.Core.Domain.Services.Tests\Education.Core.Domain.Services.Tests.csproj", "{ACAC27DD-97D9-4CEF-9229-287FDE098543}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{D3C16464-61B8-44B7-A01D-4CC0F4EA6352}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3C16464-61B8-44B7-A01D-4CC0F4EA6352}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3C16464-61B8-44B7-A01D-4CC0F4EA6352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACAC27DD-97D9-4CEF-9229-287FDE098543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAC27DD-97D9-4CEF-9229-287FDE098543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAC27DD-97D9-4CEF-9229-287FDE098543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAC27DD-97D9-4CEF-9229-287FDE098543}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{526C6EBD-43BC-4809-BB3C-9C53FD00D0D1} = {1744F08B-5E3D-4AB1-9CED-13AE9A075647}
 		{61500D70-30CC-44AE-897C-60AEACA9BCE9} = {6A648C9D-70CD-4415-ADA3-DB0E28573749}
 		{D3C16464-61B8-44B7-A01D-4CC0F4EA6352} = {8A11D9AA-CB46-450B-9447-DDF4D8AED045}
+		{ACAC27DD-97D9-4CEF-9229-287FDE098543} = {09295CBE-BD2D-4E4B-A72F-7AE8954D6DBA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F353D0D2-9B4B-45B6-BAC3-C859546D360D}
