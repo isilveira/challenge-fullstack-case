@@ -11,9 +11,9 @@ namespace Education.Core.Domain.Validations.EntityValidationsDefault
     {
         public SchoolValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().WithMessage("{0} cannot be empty!");
-            RuleFor(x => x.Name).MinimumLength(3).WithMessage("{0} must have at least 3 caracters!");
-            RuleFor(x => x.Name).MaximumLength(100).WithMessage("{0} must have a maximum of 100 caracters!");
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Nome não pode estar vazio!");
+            RuleFor(x => x.Name).MinimumLength(3).WithMessage("Nome deve ter pelo menos 3 caracteres!");
+            RuleFor(x => x.Name).MaximumLength(100).WithMessage("Nome deve ter no máximo 100 caracteres!");
         }
     }
 }

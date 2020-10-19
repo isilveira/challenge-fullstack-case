@@ -10,7 +10,7 @@ namespace Education.Core.Domain.Validations.DomainValidations.Default.Schools
             SchoolNameAlreadyExistsSpecification schoolNameAlreadyExistsSpecification
         )
         {
-            base.Add("SchoolNameMustBeUnique", new Rule<School>(schoolNameAlreadyExistsSpecification.Not(), "A register with this name already exists!"));
+            base.Add("SchoolNameMustBeUnique", new Rule<School>(schoolNameAlreadyExistsSpecification.Not(), "Já existe uma Escola com esse nome!"));
         }
     }
 }

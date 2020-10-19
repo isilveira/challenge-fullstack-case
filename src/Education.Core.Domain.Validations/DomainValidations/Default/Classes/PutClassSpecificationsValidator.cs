@@ -11,8 +11,8 @@ namespace Education.Core.Domain.Validations.DomainValidations.Default.Classes
             ClassCodeAlreadyExistsSpecification classCodeAlreadyExistsSpecification
             )
         {
-            base.Add("ClassNameMustBeUnique", new Rule<Class>(classNameAlreadyExistsSpecification.Not(), "A register with this name already exists!"));
-            base.Add("ClassCodeMustBeUnique", new Rule<Class>(classCodeAlreadyExistsSpecification.Not(), "A register with this code already exists!"));
+            base.Add("ClassNameMustBeUnique", new Rule<Class>(classNameAlreadyExistsSpecification.Not(), "Já existe uma Turma com esse nome!"));
+            base.Add("ClassCodeMustBeUnique", new Rule<Class>(classCodeAlreadyExistsSpecification.Not(), "Já existe uma Turma com esse Código de Turma!"));
         }
     }
 }

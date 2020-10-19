@@ -33,7 +33,7 @@ namespace Education.Core.Domain.Services
                     entityExceptions.Add(new EntityException(error.PropertyName, errorMessage));
                 }
 
-                var exception = new BusinessException("Operation failed in entity validation!", entityExceptions, null);
+                var exception = new BusinessException("Operação falhou na validação de entidade!", entityExceptions, null);
 
                 throw exception;
             }
@@ -52,7 +52,7 @@ namespace Education.Core.Domain.Services
                     domainExceptions.Add(new DomainException(errorMessage));
                 }
 
-                var exception = new BusinessException("Operation failed in domain validation!", null, domainExceptions);
+                var exception = new BusinessException("Operação falho na validação de domínio!", null, domainExceptions);
 
                 throw exception;
             }
