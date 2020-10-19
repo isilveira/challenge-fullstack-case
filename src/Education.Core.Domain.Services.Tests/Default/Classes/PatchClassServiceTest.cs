@@ -52,7 +52,7 @@ namespace Education.Core.Domain.Services.Tests.Default.Classes
         }
 
         [TestMethod]
-        public async Task TestPostClassWithDuplicatedNameOnSchoolAsync()
+        public async Task TestPatchClassWithDuplicatedNameOnSchoolAsync()
         {
             var mockedPatchClassService = GetMockedPatchClassService();
 
@@ -69,7 +69,7 @@ namespace Education.Core.Domain.Services.Tests.Default.Classes
         }
 
         [TestMethod]
-        public async Task TestPostClassWithDuplicatedClassCodeOnSchoolAsync()
+        public async Task TestPatchClassWithDuplicatedClassCodeOnSchoolAsync()
         {
             var mockedPatchClassService = GetMockedPatchClassService();
 
@@ -86,7 +86,7 @@ namespace Education.Core.Domain.Services.Tests.Default.Classes
         }
 
         [TestMethod]
-        public async Task TestPostClassValidModelAsync()
+        public async Task TestPatchClassValidModelAsync()
         {
             var mockedPatchClassService = GetMockedPatchClassService();
 

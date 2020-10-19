@@ -48,7 +48,7 @@ namespace Education.Core.Domain.Services.Tests.Default.Schools
         }
 
         [TestMethod]
-        public async Task TestPostSchoolWithDuplicatedNameOnSchoolAsync()
+        public async Task TestPutSchoolWithDuplicatedNameOnSchoolAsync()
         {
             var mockedPutSchoolService = GetMockedPutSchoolService();
 
@@ -63,7 +63,7 @@ namespace Education.Core.Domain.Services.Tests.Default.Schools
         }
 
         [TestMethod]
-        public async Task TestPostSchoolValidModelAsync()
+        public async Task TestPutSchoolValidModelAsync()
         {
             var mockedPutSchoolService = GetMockedPutSchoolService();
 

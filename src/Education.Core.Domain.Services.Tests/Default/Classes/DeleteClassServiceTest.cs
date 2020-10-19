@@ -31,7 +31,7 @@ namespace Education.Core.Domain.Services.Tests.Default.Classes
         }
 
         [TestMethod]
-        public async Task TestPostClassValidModelAsync()
+        public async Task TestDeleteClassValidModelAsync()
         {
             var mockedDeleteClassService = GetMockedDeleteClassService();
 
